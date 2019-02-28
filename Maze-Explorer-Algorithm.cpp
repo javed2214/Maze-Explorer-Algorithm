@@ -16,7 +16,6 @@ void addString(string &new_path, int k, string path){
 
 int main(){
 
-+
 	FASTREAD;
 	unordered_map <string,string> Map;
 
