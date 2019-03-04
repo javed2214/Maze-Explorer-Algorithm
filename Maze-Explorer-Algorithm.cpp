@@ -26,29 +26,27 @@ int main(){
 	Map["SBS"]="B";
 	Map["LBL"]="S";
 
-	string path="LLLLBLSBLLBLL";
+	string path="LBRLBSRBLSBLSBSLBL";
 	int count=3;
 	string s;
 
 	vector <string> v;
 
 	cout<<"Possible Combinations: ";
-	for(int i=0;i<path.length()-2;i++){
+	for(int i=0;i<path.length();i++){
 
-		s=path.substr(i,i+count);
+		s=path.substr(i,count);
 		cout<<s<<" ";
 		if(Map.find(s)!=Map.end()){
-			path.replace(i,i+count,(Map[s]));
+			path.replace(i,count,(Map[s]));
 			i=0;
-			count=3;
 		}
-		count--;
 	}
 	cout<<"\nShortest Path: ";
-	cout<<path;
-	cout<<"\n";
-
 	if(Map.find(path)!=Map.end()) cout<<Map[path];
 	
+	else cout<<path;
+	cout<<"\n";
+
 	return 0;
 }
